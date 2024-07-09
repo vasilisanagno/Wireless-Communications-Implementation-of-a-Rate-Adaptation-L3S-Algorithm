@@ -1,0 +1,44 @@
+{
+    "low": {
+        "minstrel": {
+            "tcp": 68.0,
+            "udp": 78.77
+        },
+        "l3s_slow": {
+            "tcp": 53.11,
+            "udp": 72.7
+        },
+        "l3s_quick": {
+            "tcp": 57.7,
+            "udp": 72.46
+        }
+    },
+    "med": {
+        "minstrel": {
+            "tcp": 36.8,
+            "udp": 33.67
+        },
+        "l3s_slow": {
+            "tcp": 23.27,
+            "udp": 30.06
+        },
+        "l3s_quick": {
+            "tcp": 26.33,
+            "udp": 29.7
+        }
+    },
+    "high": {
+        "minstrel": {
+            "tcp": 36.1,
+            "udp": 30.87
+        },
+        "l3s_slow": {
+            "tcp": 22.36,
+            "udp": 30.26
+        },
+        "l3s_quick": {
+            "tcp": 22.0,
+            "udp": 29.0
+        }
+    }
+}

@@ -1,0 +1,17 @@
+------------------------------------------------------------
+Client connecting to 192.168.2.81, UDP port 5001
+Sending 1470 byte datagrams, IPG target: 74.77 us (kalman adjust)
+UDP buffer size:  208 KByte (default)
+------------------------------------------------------------
+[  3] local 192.168.2.85 port 36758 connected with 192.168.2.81 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]    0.0-50.0 sec 317.26 MBytes   50.8 Mbits/sec
+[  3]   50.0-100.0 sec 185.25 MBytes   29.6 Mbits/sec
+[  3]  100.0-150.0 sec 177.95 MBytes   28.5 Mbits/sec
+[  3]  150.0-200.0 sec 172.11 MBytes   27.5 Mbits/sec
+[  3]  200.0-250.0 sec 171.75 MBytes   27.5 Mbits/sec
+[  3]  250.0-300.0 sec 163.19 MBytes   26.1 Mbits/sec
+[  3]  300.0-350.0 sec 165.39 MBytes   26.5 Mbits/sec
+[  3]  350.0-400.0 sec 173.97 MBytes   27.8 Mbits/sec
+[  3]  400.0-450.0 sec 174.57 MBytes   27.9 Mbits/sec
+[  3]  0.0-451.0 sec  1701.44 GBytes    30.2 Mbits/sec

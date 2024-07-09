@@ -1,0 +1,51 @@
+--- rc80211_minstrel_ht_debugfs_original.c	2024-06-27 22:18:23.587313382 +0300
++++ rc80211_minstrel_ht_debugfs.c	2024-06-26 10:38:08.135076100 +0300
+@@ -55,6 +55,7 @@
+ 		static const int bitrates[4] = { 10, 20, 55, 110 };
+ 		int idx = i * MCS_GROUP_RATES + j;
+ 		unsigned int duration;
++		unsigned int per_value;
+ 
+ 		if (!(mi->supported[i] & BIT(j)))
+ 			continue;
+@@ -101,9 +102,16 @@
+ 		tp_avg = minstrel_ht_get_tp_avg(mi, i, j, mrs->prob_ewma);
+ 		eprob = MINSTREL_TRUNC(mrs->prob_ewma * 1000);
+ 
++		if(idx>=160) {
++			per_value = 0;
++		}
++		else {
++			per_value = mi->per[idx];
++		}
++
+ 		p += sprintf(p, "%4u.%1u    %4u.%1u     %3u.%1u"
+ 				"     %3u   %3u %-3u   "
+-				"%9llu   %-9llu\n",
++				"%9llu   %-9llu  %9d        %9d     %3d.%02d\n",
+ 				tp_max / 10, tp_max % 10,
+ 				tp_avg / 10, tp_avg % 10,
+ 				eprob / 10, eprob % 10,
+@@ -111,7 +119,9 @@
+ 				mrs->last_success,
+ 				mrs->last_attempts,
+ 				(unsigned long long)mrs->succ_hist,
+-				(unsigned long long)mrs->att_hist);
++				(unsigned long long)mrs->att_hist,
++				mi->total_packets_per_mcs[idx], mi->ack_counter_per_mcs[idx],
++				per_value / 100, per_value % 100);
+ 	}
+ 
+ 	return p;
+@@ -143,9 +153,9 @@
+ 
+ 	p += sprintf(p, "\n");
+ 	p += sprintf(p,
+-		     "              best   ____________rate__________    ____statistics___    _____last____    ______sum-of________\n");
++		     "              best   ____________rate__________    ____statistics___    _____last____    ______sum-of________    ____packet-error-rate(PER)____\n");
+ 	p += sprintf(p,
+-		     "mode guard #  rate  [name   idx airtime  max_tp]  [avg(tp) avg(prob)]  [retry|suc|att]  [#success | #attempts]\n");
++		     "mode guard #  rate  [name   idx airtime  max_tp]  [avg(tp) avg(prob)]  [retry|suc|att]  [#success | #attempts]  [#total_packets | #total_acks | PER]\n");
+ 
+ 	p = minstrel_ht_stats_dump(mi, MINSTREL_CCK_GROUP, p);
+ 	for (i = 0; i < MINSTREL_CCK_GROUP; i++)
