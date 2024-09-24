@@ -94,4 +94,4 @@ Minstrel generally outperforms L3S in terms of throughput, especially under low 
 2. Rate Adaptation for 802.11 Wireless Networks: Minstrel, Andrew McGregor, Derek Smithies
 
 ## More details
-For more details, see the [Wireless_Communcations_Final_Project.pdf](Wireless_Communcations_Final_Project.pdf).
+For more details, see the [Wireless_Communcations_Final_Project](Wireless_Communcations_Final_Project.pdf).
