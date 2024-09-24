@@ -20,6 +20,7 @@
   - [Debugfs Interface](#debugfs-interface)
 - [Conclusion](#conclusion)
 - [References](#references)
+- [More Details](#more-details)
 
 ## Introduction
 This project compares the L3S (Long-term Stability and Short-term Responsiveness) algorithm and the Minstrel algorithm for WLANs. L3S adjusts transmission rates based on real-time conditions, while Minstrel uses acknowledgment feedback and periodic probing.
@@ -91,3 +92,6 @@ Minstrel generally outperforms L3S in terms of throughput, especially under low 
 ## References
 1. Practical Rate Adaptation for Very High Throughput WLANs, Arafet Ben Makhlouf, Mounir Hamdi, 2013, IEEE
 2. Rate Adaptation for 802.11 Wireless Networks: Minstrel, Andrew McGregor, Derek Smithies
+
+## More details
+For more details, see the [full project documentation](link_to_pdf).
